@@ -375,10 +375,7 @@ public:
   /// \param CodeLoc is the code location of the submit call (default argument)
   /// \return a SYCL event object, which corresponds to the queue the command
   /// group is being enqueued on.
-  event ext_oneapi_submit_barrier(_CODELOCONLYPARAM(&CodeLoc)) {
-    return submit(
-        [=](handler &CGH) { CGH.ext_oneapi_barrier(); } _CODELOCFW(CodeLoc));
-  }
+  event ext_oneapi_submit_barrier(_CODELOCONLYPARAM(&CodeLoc));
 
   /// Prevents any commands submitted afterward to this queue from executing
   /// until all commands previously submitted to this queue have entered the

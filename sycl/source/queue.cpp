@@ -241,5 +241,14 @@ bool queue::ext_codeplay_supports_fusion() const {
       ext::codeplay::experimental::property::queue::enable_fusion>();
 }
 
+event queue::ext_oneapi_submit_barrier(_CODELOCONLYPARAM(&CodeLoc)) {
+  if(is_in_order()) {
+    return impl->getLastEvent(impl);
+  } else {
+    return submit(
+        [=](handler &CGH) { CGH.ext_oneapi_barrier(); } _CODELOCFW(CodeLoc));
+  }
+}
+
 } // __SYCL_INLINE_VER_NAMESPACE(_V1)
 } // namespace sycl

@@ -2856,6 +2856,11 @@ pi_result piextQueueCreateWithNativeHandle(pi_native_handle NativeHandle,
   return PI_SUCCESS;
 }
 
+pi_result piextGetLastEvent(pi_queue queue, pi_event* event) {
+  *event = queue->LastCommandEvent;
+  return PI_SUCCESS;
+}
+
 // If indirect access tracking is enabled then performs reference counting,
 // otherwise just calls zeMemAllocDevice.
 static pi_result ZeDeviceMemAllocHelper(void **ResultPtr, pi_context Context,

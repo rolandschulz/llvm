@@ -51,6 +51,7 @@ _PI_API(piQueueRetain)
 _PI_API(piQueueRelease)
 _PI_API(piextQueueGetNativeHandle)
 _PI_API(piextQueueCreateWithNativeHandle)
+_PI_API(piextGetLastEvent)
 // Memory
 _PI_API(piMemBufferCreate)
 _PI_API(piMemImageCreate)

@@ -568,6 +568,12 @@ bool queue_impl::ext_oneapi_empty() const {
   return true;
 }
 
+event queue_impl::getLastEvent(const std::shared_ptr<detail::queue_impl> &Self) {
+  RT::PiEvent NativeEvent;
+  getPlugin().call<PiApiKind::piextGetLastEvent>(MQueues[0], &NativeEvent);
+  return prepareUSMEvent(Self, NativeEvent);
+}
+
 } // namespace detail
 } // __SYCL_INLINE_VER_NAMESPACE(_V1)
 } // namespace sycl

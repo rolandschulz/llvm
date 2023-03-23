@@ -1201,6 +1201,7 @@ __SYCL_EXPORT pi_result piextQueueCreateWithNativeHandle(
     pi_native_handle nativeHandle, pi_context context, pi_device device,
     bool pluginOwnsNativeHandle, pi_queue *queue);
 
+__SYCL_EXPORT pi_result piextGetLastEvent(pi_queue queue, pi_event* event);
 //
 // Memory
 //

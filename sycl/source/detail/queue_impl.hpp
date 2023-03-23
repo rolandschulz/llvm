@@ -602,6 +602,8 @@ public:
                                size_t Offset,
                                const std::vector<event> &DepEvents);
 
+  event getLastEvent(const std::shared_ptr<detail::queue_impl> &Self);
+
 protected:
   // template is needed for proper unit testing
   template <typename HandlerType = handler>
